@@ -1,0 +1,39 @@
+#!/bin/bash
+# To users: this script needs to be run as root or with sudo
+
+# Add repositories here
+REPOS="
+ppa:apt-fast/stable
+ppa:boost-latest/ppa
+ppa:octave/stable
+"
+
+# Add packages here
+PACKAGES="
+libboost1.55
+octave
+git
+build-essential
+libreoffice
+texlive-full
+mysql-client
+"
+
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# No need to go below this line unless debugging.
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# add all repositories
+for r in $REPOS
+do
+  apt-add-repository -y $r
+done
+
+# update package lists
+apt-get update
+
+# install apt-fast
+apt-get install -y apt-fast
+
+# install all packages as a single apt-fast command
+apt-fast install ${PACKAGES[@]}

@@ -9,6 +9,10 @@ are going to be in ```./dirs``` but not necessarily. Add ```~/bin``` and
 ```~/bin/links``` to your ```$PATH``` environment variable, then fill your links
 directory with links to the application binaries in ```./dirs```.
 
+```./once``` is a directory containing scripts that need to be run once. Mostly
+this is a list of PPAs and system wide packages that I like to have set up when
+I set up a new system. apt-fast, Git, TeX Live, things like that.
+
 ## Files
 ### builder-atom
 [Atom](http://atom.io) is a really neat text editor. It's highly hackable. One
