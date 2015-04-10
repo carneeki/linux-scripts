@@ -1,0 +1,27 @@
+#!/bin/bash
+# Grab the latest Atom revision and build it. A Makefile (or grunt or similar)
+# is probably a better way to go about this, but the script works.
+TMPDIR=/tmp
+
+cd ~/src/atom
+
+# checkout specific branch
+# else use master
+## note: this is the command recommended by https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md
+# git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+if [ "$#" -eq 1 ]
+then
+  git checkout -b $1
+else
+  git checkout master -q
+fi
+
+git pull -q
+
+MYATOMCOMM=`atom --version | awk -F- '{print $2}'`
+LATESTATOMCOMM=`git log -n 1 --pretty=format:%h`
+
+if [ "$MYATOMCOMM" != "$LATESTATOMCOMM" ]
+then
+  echo "Do a build"
+fi
