@@ -2,8 +2,7 @@
 # atom-packages to be installed. can be run as user to install only for that
 # user, or root if to be installed system wide
 
-PACKAGES=
-"
+PACKAGES="
 build
 git-plus
 language-gcode
