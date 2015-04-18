@@ -4,7 +4,6 @@
 TMPDIR=/tmp
 
 cd ~/src/atom
-git pull
 
 # checkout specific branch
 # else use master
@@ -16,6 +15,8 @@ then
 else
   echo git checkout master
 fi
+
+git pull
 
 # First time I ran this, it didn't finish the build, rather it just set up some
 # modules. Not sure why, but I run it three times now to be sure. I probably
