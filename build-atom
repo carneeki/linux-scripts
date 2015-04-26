@@ -18,12 +18,10 @@ fi
 
 git pull
 
-# First time I ran this, it didn't finish the build, rather it just set up some
-# modules. Not sure why, but I run it three times now to be sure. I probably
-# don't need to.
+# First time I ran this, it didn't finish the build, may need to execute
+# multiple times.
 script/build
-script/build
-script/build
+
 
 # clean up any previous .deb files.
 #rm $TMPDIR/atom-build/*.deb

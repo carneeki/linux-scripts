@@ -6,18 +6,44 @@ REPOS="
 ppa:apt-fast/stable
 ppa:boost-latest/ppa
 ppa:octave/stable
+ppa:git-core/ppa
+"
+
+BAD_PACKAGES="
+libboost1.55
 "
 
 # Add packages here
 PACKAGES="
-libboost1.55
+google-chrome-stable
+openssh-server
 octave
 git
 build-essential
 libreoffice
 texlive-full
 mysql-client
+iojs
+build-essential
+libgnome-keyring-dev
+fakeroot
+vlc
+cifs-utils
+gparted
+unetbootin
+transmission
 "
+# Other repos
+# iojs
+curl -sL https://deb.nodesource.com/setup_iojs_1.x | sudo bash -
+
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Adobe Source Code Pro Font
+# A nice monotype font from Adobe (and it's open source)
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+mkdir -p /usr/share/fonts/opentype
+git clone https://github.com/adobe-fonts/source-code-pro.git /usr/share/fonts/opentype/source-code-pro
+fc-cache -f -v
 
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # No need to go below this line unless debugging.
